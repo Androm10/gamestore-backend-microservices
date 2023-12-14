@@ -1,1 +1,1 @@
-export * from './get-user.input';
+export * from './get-review.input';

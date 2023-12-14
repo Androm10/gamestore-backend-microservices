@@ -18,6 +18,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/gamestore-backend/tsconfig.app.json"
       }
+    },
+    "gamestore-games-catalog": {
+      "type": "application",
+      "root": "apps/gamestore-games-catalog",
+      "entryFile": "main",
+      "sourceRoot": "apps/gamestore-games-catalog/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/gamestore-games-catalog/tsconfig.app.json"
+      }
     }
   }
 }
