@@ -9,4 +9,7 @@ export class EnvironmentVariables {
 
   @IsString()
   GAMESTORE_DATABASE_DIALECT: string;
+
+  @IsString()
+  GRPC_CONNECTION_URL: string;
 }

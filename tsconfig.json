@@ -18,7 +18,12 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@gamestore/typeorm": ["libs/typeorm/src"]
+      "@gamestore/typeorm": [
+        "libs/typeorm/src"
+      ],
+      "@gamestore/grpc": [
+        "libs/grpc/src"
+      ]
     }
   }
 }

@@ -1,5 +1,5 @@
-import { Controller, Get, Param, Query } from '@nestjs/common';
-import { GetGameInput, GetGamesInput } from './inputs';
+import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
+import { AddGameInput, GetGameInput, GetGamesInput } from './inputs';
 import { GameService } from '../application';
 
 @Controller('games')
@@ -9,6 +9,11 @@ export class GameController {
   @Get(':id')
   public async getGame(@Param() { id }: GetGameInput) {
     return this.gameService.getGame({ id });
+  }
+
+  @Post()
+  public async addGame(@Body() data: AddGameInput) {
+    return this.gameService.addGame(data);
   }
 
   @Get()

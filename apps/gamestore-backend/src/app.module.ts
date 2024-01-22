@@ -12,7 +12,7 @@ import { configuration, validate } from './config';
     TypeOrmModule.forRootAsync({
       useFactory: (configService: ConfigService) => ({
         type: configService.get('database.dialect'),
-        url: configService.get('database.uri'),
+        url: configService.get('database.url'),
         synchronize: true,
         autoLoadEntities: true,
       }),

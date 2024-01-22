@@ -1,6 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { GameRepository } from '../infrastructure';
-import { GetGameParameters, GetGamesParameters } from './game.domain-type';
+import {
+  AddGameParameters,
+  GetGameParameters,
+  GetGamesParameters,
+} from './game.domain-type';
 
 @Injectable()
 export class GameDomain {
@@ -8,6 +12,20 @@ export class GameDomain {
 
   public async getGame({ id }: GetGameParameters) {
     return this.gameRepository.get({ id });
+  }
+
+  public async addGame({
+    description,
+    name,
+    price,
+    releaseDate,
+  }: AddGameParameters) {
+    return this.gameRepository.create({
+      description,
+      name,
+      price,
+      releaseDate,
+    });
   }
 
   public async getGames({

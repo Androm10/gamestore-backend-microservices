@@ -3,12 +3,15 @@ import { Game } from '../entities';
 import {
   Between,
   Like,
-  MoreThan,
   MoreThanOrEqual,
   Repository as TypeOrmRepository,
 } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-import { GetGameParameters, GetGamesParameters } from './game.repository-type';
+import {
+  AddGameParameters,
+  GetGameParameters,
+  GetGamesParameters,
+} from './game.repository-type';
 
 @Injectable()
 export class GameRepository {
@@ -21,6 +24,19 @@ export class GameRepository {
     const game = await this.game.findOne({
       where: { id },
     });
+    return game;
+  }
+
+  async create({ description, name, price, releaseDate }: AddGameParameters) {
+    const game = this.game.create({
+      description,
+      name,
+      price,
+      releaseDate,
+    });
+
+    await game.save();
+
     return game;
   }
 

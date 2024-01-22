@@ -8,4 +8,7 @@ export class Review extends BaseEntity {
 
   @Column()
   rank: number;
+
+  @Column()
+  gameId: number;
 }

@@ -1,0 +1,21 @@
+syntax = "proto3";
+package core;
+
+service CoreService {
+  rpc AddGame (GameDto) returns (GameReturnData) {}
+}
+
+message GameDto {
+    int32 id = 1;
+    string name = 2;
+    string releaseDate = 3;
+    float price = 4;
+}
+
+message GameReturnData {
+    int32 id = 1;
+    string name = 2;
+    string releaseDate = 3;
+    float price = 4;
+    int32 gameCatalogId = 5;
+}

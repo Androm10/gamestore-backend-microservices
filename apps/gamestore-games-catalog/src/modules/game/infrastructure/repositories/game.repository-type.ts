@@ -11,3 +11,13 @@ export interface GetGamesParameters {
 
   releaseDate?: Date;
 }
+
+export interface AddGameParameters {
+  name: string;
+
+  description: string;
+
+  releaseDate: Date;
+
+  price: number;
+}

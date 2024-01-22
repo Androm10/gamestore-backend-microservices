@@ -1,5 +1,6 @@
 import { BaseEntity } from '@gamestore/typeorm';
-import { Column, Entity } from 'typeorm';
+import { Column, Entity, ManyToMany } from 'typeorm';
+import { Game } from '../../../game/infrastructure';
 
 @Entity()
 export class User extends BaseEntity {
@@ -8,6 +9,9 @@ export class User extends BaseEntity {
 
   @Column({ unique: true })
   email: string;
+
+  @ManyToMany(() => Game, (game) => game.wishlisted)
+  wishlist: Game[];
 
   @Column()
   password: string;
